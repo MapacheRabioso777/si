@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión Financiera - Gastos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles_app.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="fas fa-wallet me-2"></i>Menu principal</a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="app.html">AFIP</a>
+                <a class="nav-link active" href="gastos.html">Gastos</a>
+                <a class="nav-link" href="ingresos.html">Ingresos</a>
+                <a class="nav-link" href="metas.html">Metas</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Header -->
+        <div class="d-flex align-items-center mb-4">
+            <a href="app.html" class="btn btn-outline-primary me-3">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+            <div>
+                <h2 class="text-primary mb-0">Registrar Gastos</h2>
+                <p class="text-muted">Controla tus gastos por categoría</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="section-card">
+                    <h4 class="text-danger mb-4"><i class="fas fa-minus-circle me-2"></i>Nuevo Gasto</h4>
+                    <form id="gastosForm">
+                        <div class="mb-3">
+                            <label class="form-label">Categoría</label>
+                            <select class="form-select" id="categoria" required>
+                                <option value="">Selecciona una categoría</option>
+                                <option value="salud">🏥 Salud</option>
+                                <option value="ocio">🎮 Ocio</option>
+                                <option value="casa">🏠 Casa</option>
+                                <option value="comida">🍕 Comida</option>
+                                <option value="educacion">📚 Educación</option>
+                                <option value="regalos">🎁 Regalos</option>
+                                <option value="alimentacion">🥗 Alimentación</option>
+                                <option value="familia">👨‍👩‍👧‍👦 Familia</option>
+                                <option value="transporte">🚗 Transporte</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Monto</label>
+                            <input type="number" class="form-control" step="0.01" placeholder="0.00" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Fecha</label>
+                            <input type="date" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Descripción (Opcional)</label>
+                            <textarea class="form-control" rows="3" placeholder="Describe el gasto..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-danger w-100">
+                            <i class="fas fa-save me-2"></i>Registrar Gasto
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="section-card">
+                    <h5 class="mb-3">Categorías de Gastos</h5>
+                    <div class="row">
+                        <div class="col-6 col-md-4 mb-2">
+                            <div class="category-btn text-center" data-category="salud">
+                                <i class="fas fa-heartbeat text-danger"></i><br><small>Salud</small>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4 mb-2">
+                            <div class="category-btn text-center" data-category="ocio">
+                                <i class="fas fa-gamepad text-purple"></i><br><small>Ocio</small>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4 mb-2">
+                            <div class="category-btn text-center" data-category="casa">
+                                <i class="fas fa-home text-primary"></i><br><small>Casa</small>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4 mb-2">
+                            <div class="category-btn text-center" data-category="comida">
+                                <i class="fas fa-pizza-slice text-warning"></i><br><small>Comida</small>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4 mb-2">
+                            <div class="category-btn text-center" data-category="educacion">
+                                <i class="fas fa-graduation-cap text-success"></i><br><small>Educación</small>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4 mb-2">
+                            <div class="category-btn text-center" data-category="regalos">
+                                <i class="fas fa-gift text-info"></i><br><small>Regalos</small>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4 mb-2">
+                            <div class="category-btn text-center" data-category="alimentacion">
+                                <i class="fas fa-utensils text-success"></i><br><small>Alimentación</small>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4 mb-2">
+                            <div class="category-btn text-center" data-category="familia">
+                                <i class="fas fa-users text-indigo"></i><br><small>Familia</small>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4 mb-2">
+                            <div class="category-btn text-center" data-category="transporte">
+                                <i class="fas fa-car text-secondary"></i><br><small>Transporte</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-card">
+                    <h5 class="mb-3">Gastos Recientes</h5>
+                    <div class="list-group list-group-flush">
+                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                            <div><i class="fas fa-pizza-slice text-warning me-2"></i>Comida - Almuerzo</div>
+                            <span class="text-danger">-$25.50</span>
+                        </div>
+                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                            <div><i class="fas fa-car text-secondary me-2"></i>Transporte - Uber</div>
+                            <span class="text-danger">-$15.00</span>
+                        </div>
+                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                            <div><i class="fas fa-heartbeat text-danger me-2"></i>Salud - Farmacia</div>
+                            <span class="text-danger">-$80.00</span>
+                        </div>
+                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                            <div><i class="fas fa-gamepad text-purple me-2"></i>Ocio - Cine</div>
+                            <span class="text-danger">-$12.00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-card" style="background: linear-gradient(135deg, #ffebee, #ffcdd2);">
+                    <h5 class="text-danger"><i class="fas fa-chart-line me-2"></i>Resumen del Mes</h5>
+                    <div class="text-center">
+                        <h3 class="text-danger">$1,230.00</h3>
+                        <p class="text-danger mb-0">Total de gastos este mes</p>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Manejar envío de formulario
+        document.getElementById('gastosForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Gasto registrado exitosamente!');
+            this.reset();
+        });
+
+        // Manejar selección de categorías
+        document.querySelectorAll('.category-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const category = this.dataset.category;
+                document.getElementById('categoria').value = category;
+                
+                document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Establecer fecha actual por defecto
+        document.querySelector('input[type="date"]').value = new Date().toISOString().split('T')[0];
+    </script>
+</body>
+</html>

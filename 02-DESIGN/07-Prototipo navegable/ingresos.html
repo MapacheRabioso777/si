@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión Financiera - Ingresos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles_app.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="fas fa-wallet me-2"></i>Menu principal</a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="app.html">AFIP</a>
+                <a class="nav-link" href="gastos.html">Gastos</a>
+                <a class="nav-link active" href="ingresos.html">Ingresos</a>
+                <a class="nav-link" href="metas.html">Metas</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Header -->
+        <div class="d-flex align-items-center mb-4">
+            <a href="app.html" class="btn btn-outline-primary me-3">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+            <div>
+                <h2 class="text-primary mb-0">Registrar Ingresos</h2>
+                <p class="text-muted">Registra todos tus ingresos por categoría</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="section-card">
+                    <h4 class="text-success mb-4"><i class="fas fa-plus-circle me-2"></i>Nuevo Ingreso</h4>
+                    <form id="ingresosForm">
+                        <div class="mb-3">
+                            <label class="form-label">Fuente de Ingreso</label>
+                            <select class="form-select" id="fuente" required>
+                                <option value="">Selecciona la fuente</option>
+                                <option value="salario">💼 Salario</option>
+                                <option value="regalo">🎁 Regalo</option>
+                                <option value="trabajos">🔧 Trabajos Extra</option>
+                                <option value="inversiones">📈 Inversiones</option>
+                                <option value="ahorros">🏦 Ahorros</option>
+                                <option value="otros">💰 Otros</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Monto</label>
+                            <input type="number" class="form-control" step="0.01" placeholder="0.00" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Fecha</label>
+                            <input type="date" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Descripción (Opcional)</label>
+                            <textarea class="form-control" rows="3" placeholder="Describe el ingreso..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-success w-100">
+                            <i class="fas fa-save me-2"></i>Registrar Ingreso
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="section-card">
+                    <h5 class="mb-3">Fuentes de Ingreso</h5>
+                    <div class="row">
+                        <div class="col-6 col-md-4 mb-2">
+                            <div class="category-btn text-center" data-fuente="salario">
+                                <i class="fas fa-briefcase text-primary"></i><br><small>Salario</small>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4 mb-2">
+                            <div class="category-btn text-center" data-fuente="regalo">
+                                <i class="fas fa-gift text-danger"></i><br><small>Regalo</small>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4 mb-2">
+                            <div class="category-btn text-center" data-fuente="trabajos">
+                                <i class="fas fa-tools text-warning"></i><br><small>Trabajos</small>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4 mb-2">
+                            <div class="category-btn text-center" data-fuente="inversiones">
+                                <i class="fas fa-chart-line text-success"></i><br><small>Inversiones</small>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4 mb-2">
+                            <div class="category-btn text-center" data-fuente="ahorros">
+                                <i class="fas fa-university text-info"></i><br><small>Ahorros</small>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4 mb-2">
+                            <div class="category-btn text-center" data-fuente="otros">
+                                <i class="fas fa-dollar-sign text-secondary"></i><br><small>Otros</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-card">
+                    <h5 class="mb-3">Ingresos Recientes</h5>
+                    <div class="list-group list-group-flush">
+                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                            <div><i class="fas fa-briefcase text-primary me-2"></i>Salario - Mensual</div>
+                            <span class="text-success">+$2,500.00</span>
+                        </div>
+                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                            <div><i class="fas fa-tools text-warning me-2"></i>Freelance - Diseño</div>
+                            <span class="text-success">+$300.00</span>
+                        </div>
+                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                            <div><i class="fas fa-gift text-danger me-2"></i>Regalo - Cumpleaños</div>
+                            <span class="text-success">+$150.00</span>
+                        </div>
+                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                            <div><i class="fas fa-chart-line text-success me-2"></i>Dividendos</div>
+                            <span class="text-success">+$75.00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-card" style="background: linear-gradient(135deg, #e8f5e8, #c8e6c8);">
+                    <h5 class="text-success"><i class="fas fa-chart-line me-2"></i>Resumen del Mes</h5>
+                    <div class="text-center">
+                        <h3 class="text-success">$3,025.00</h3>
+                        <p class="text-success mb-0">Total de ingresos este mes</p>
+                
+                    </div>
+                </div>
+
+                <div class="section-card" style="background: linear-gradient(135deg, var(--light-blue), var(--primary-blue));">
+                    <h5 class="text-primary"><i class="fas fa-lightbulb me-2"></i>Consejo</h5>
+                    <p class="text-primary mb-0">
+                        💡 Diversifica tus fuentes de ingreso para mayor estabilidad financiera. 
+                        Considera inversiones pasivas y trabajos adicionales.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Manejar envío de formulario
+        document.getElementById('ingresosForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Ingreso registrado exitosamente!');
+            this.reset();
+        });
+
+        // Manejar selección de fuentes
+        document.querySelectorAll('.category-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const fuente = this.dataset.fuente;
+                document.getElementById('fuente').value = fuente;
+                
+                document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Establecer fecha actual por defecto
+        document.querySelector('input[type="date"]').value = new Date().toISOString().split('T')[0];
+    </script>
+</body>
+</html>

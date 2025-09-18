@@ -1,0 +1,395 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+html{
+    scroll-behavior: smooth;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header{
+    background-image: linear-gradient(
+        rgba(0,0,0,0.7),
+        rgba(0, 0, 0, 0.7)),
+        url('Login_v1/images/fondo3.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    background-attachment: fixed;
+}
+
+.menu{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    font-weight: 700;
+    
+}
+
+.menu .navbar ul li{
+    position: relative;
+    float: left;
+}
+
+.menu .navbar ul li a {
+    font-size: 18px;
+    padding: 20px;
+    color: rgb(255, 255, 255);
+    display: block;
+    font-weight: 600;
+}
+
+.menu .navbar ul li a:hover{
+    color: #7bb7ce;
+}
+
+#menu {
+    display: none;
+}
+
+.menu-icono{
+    width: 25px;
+}
+
+.menu label{
+    cursor: pointer;
+    display: none;
+}
+
+.header-content{
+    text-align: center;
+}
+.header-content h1{
+    font-size: 75px;
+    line-height: 80px;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    margin-bottom: 35px;
+}
+
+.header-content p{
+    font-size: 16px;
+    color: #ffffff;
+    padding: 0 250px;
+    margin-bottom: 25px;
+}
+
+.btn-1{
+    display: inline-block;
+    padding: 11px 35px;
+    background-color: #1d5c79;
+    color: #fffefe;
+    text-transform: uppercase;
+}
+
+.btn-1:hover{
+    background-color: rgb(0, 0, 0);
+}
+
+.dinero {
+    padding: 100px 0;
+    background-color: #51acd3dc;
+    position: relative;
+}
+.dinero-content{
+    text-align: center;
+}
+
+.dinero-content h2{
+    font-size: 55px;
+    line-height: 70px;
+    color: #030303;
+    text-transform: uppercase;
+    padding: 0 250px;
+    margin-bottom: 15px;
+}
+
+.txt-p{
+    font-size: 16px;
+    color: #000000;
+    padding: 0 250px;
+    margin-bottom: 35px;
+}
+
+.dinero-group{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.dinero-1 img{
+    width: 200px;
+}
+
+.dinero-1{
+    padding: 0 25px;
+}
+
+.dinero-2 img{
+    width: 200px;
+}
+
+.dinero-2{
+    padding: 0 25px;
+}
+
+.dinero-3 img{
+    width: 200px;
+}
+
+.dinero-3{
+    padding: 0 25px;
+}
+
+.dinero-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 300px;
+}
+
+.dinero-1 h3{
+    color: #000000;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.objetivos{
+    background-image: linear-gradient(
+        rgba(0,0,0,0.7),
+        rgba(0, 0, 0, 0.7)),
+        url('Login_v1/images/fondo3.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 100px 0;
+}
+
+.objetivos-content{
+    text-align: center;
+
+}
+
+.objetivos-content h2{
+    font-size: 55px;
+    line-height: 70px;
+    color: #cfcece;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+
+.objetivos-content p{
+    font-size: 16px;
+    color: hwb(0 79% 19%);
+    margin-bottom: 50px;
+    padding: 0 100px;
+}
+
+.objetivos-group{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.objetivos-content h3{
+    color: #fffefe;
+}
+
+.general{
+    display:flex;
+}
+
+.general-1{
+    width: 50%;
+    padding: 100px 250px 100px 100px;
+    background-color: aliceblue;
+}
+
+.general-2{
+    background-image: url(images/git.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+}
+
+.general-3{
+    background-image: url(images/A.F.I.P.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+
+}
+
+h2{
+    font-size: 55px;
+    line-height: 70px;
+    color: #252222;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+p{
+    font-size: 16px;
+    color: #252222;
+    margin: 25px 0 45px 0;
+}
+
+.footer{
+    padding: 100px 0;
+    background-color: #030303;
+}
+
+.footer-content{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.link h3{
+    font: 18px;
+    color: aliceblue;
+    margin-bottom: 15px;
+}
+
+.link a {
+    font-size: 16px;
+    color: #c5c5c5;
+    display: block;
+    margin-bottom: 15px;
+}
+
+@media(max-width:991px){
+    .menu{
+        padding: 30px;
+    }
+
+    .menu label{
+        display: initial;
+    }
+
+    .menu .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color:#252222;
+        display: none;
+    }
+
+    .menu .navbar ul li{
+        width: 100%;
+    }
+
+    #menu:checked ~ .navbar{
+        display: initial;
+    }
+
+    .header{
+        min-height: 0vh;
+    }
+
+    .header-content{
+        padding: 100px 30px;
+    }
+
+    .header-content p{
+        padding: 0;
+    }
+
+    .dinero{
+        padding: 30px;
+    }
+
+    .dinero-content h2{
+        padding: 0;
+    }
+
+    .txt-p{
+        padding: 0;
+    }
+
+    .dinero-group{
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+
+    .dinero-img{
+        display: none;
+    }
+
+    .objetivos{
+        padding: 30px;
+    }
+
+    .objetivos-content p{
+        padding: 0;
+    }
+
+    .objetivos-group{
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+
+    .objetivos-1{
+        margin-bottom: 25px;
+    }
+
+    .general{
+        flex-direction: column;
+    }
+
+    .general-1{
+        width: 100%;
+        padding: 30px;
+        text-align: center;
+    }
+
+    .general-2, .general-3{
+        display: none;
+    }
+
+    .footer{
+        padding: 30px;
+    }
+
+    .footer-content{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    
+
+    /*ESTA PARTE  ES DE LA APP*/
+
+    
+}

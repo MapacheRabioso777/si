@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión Financiera - AFIP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles_app.css" rel="stylesheet">
+</head>
+<body> 
+    <!-- Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="fas fa-wallet me-2"></i>Menu principal</a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link active" href="app.html">AFIP</a>
+                <a class="nav-link" href="gastos.html">Gastos</a>
+                <a class="nav-link" href="ingresos.html">Ingresos</a>
+                <a class="nav-link" href="metas.html">Metas</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- DASHBOARD -->
+        <div class="text-center mb-5">
+            <h1 class="display-4 text-primary mb-3">Dashboard Financiero</h1>
+            <p class="lead text-muted">Controla tus finanzas de manera inteligente</p>
+        </div>
+
+        <!-- Estadísticas -->
+        <div class="row mb-5">
+            <div class="col-md-4 mb-3">
+                <div class="stats-card">
+                    <div class="income-icon icon-circle">
+                        <i class="fas fa-arrow-up"></i>
+                    </div>
+                    <h3 class="text-success">$2,450.00</h3>
+                    <p class="text-muted mb-0">Ingresos Totales</p>
+                    <small class="text-success">Este mes</small>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="stats-card">
+                    <div class="expense-icon icon-circle">
+                        <i class="fas fa-arrow-down"></i>
+                    </div>
+                    <h3 class="text-danger">$1,230.00</h3>
+                    <p class="text-muted mb-0">Gastos Totales</p>
+                    <small class="text-danger">Este mes</small>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="stats-card">
+                    <div class="goal-icon icon-circle">
+                        <i class="fas fa-piggy-bank"></i>
+                    </div>
+                    <h3 class="text-primary">$1,220.00</h3>
+                    <p class="text-muted mb-0">Balance</p>
+                    <small class="text-primary">Disponible</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Acciones Rápidas -->
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100" onclick="window.location.href='gastos.html'">
+                    <div class="card-body text-center">
+                        <div class="expense-icon icon-circle">
+                            <i class="fas fa-minus-circle"></i>
+                        </div>
+                        <h5 class="card-title text-danger">Registrar Gastos</h5>
+                        <p class="card-text text-muted">Salud, ocio, casa, comida, educación y más</p>
+                        <button class="btn btn-outline-danger">Agregar Gasto</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100" onclick="window.location.href='ingresos.html'">
+                    <div class="card-body text-center">
+                        <div class="income-icon icon-circle">
+                            <i class="fas fa-plus-circle"></i>
+                        </div>
+                        <h5 class="card-title text-success">Registrar Ingresos</h5>
+                        <p class="card-text text-muted">Salario, regalos, trabajos y otros ingresos</p>
+                        <button class="btn btn-outline-success">Agregar Ingreso</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100" onclick="window.location.href='metas.html'">
+                    <div class="card-body text-center">
+                        <div class="goal-icon icon-circle">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h5 class="card-title text-primary">Definir Metas</h5>
+                        <p class="card-text text-muted">Establece y sigue tus objetivos financieros</p>
+                        <button class="btn btn-primary">Crear Meta</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Resumen Rápido -->
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <div class="section-card">
+                    <h5 class="mb-3"><i class="fas fa-chart-pie me-2"></i>Gastos por Categoría</h5>
+                    <div class="list-group list-group-flush">
+                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                            <div><i class="fas fa-pizza-slice text-warning me-2"></i>Comida</div>
+                            <span class="text-danger">$450.00</span>
+                        </div>
+                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                            <div><i class="fas fa-car text-secondary me-2"></i>Transporte</div>
+                            <span class="text-danger">$280.00</span>
+                        </div>
+                        <div class="list-group-item d-flex justify-content-between align-items-center">
+                            <div><i class="fas fa-home text-primary me-2"></i>Casa</div>
+                            <span class="text-danger">$320.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="section-card">
+                    <h5 class="mb-3"><i class="fas fa-bullseye me-2"></i>Metas Activas</h5>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span>Vacaciones</span>
+                            <span class="badge bg-primary">65%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 65%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span>Fondo de Emergencia</span>
+                            <span class="badge bg-warning">40%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-warning" style="width: 40%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

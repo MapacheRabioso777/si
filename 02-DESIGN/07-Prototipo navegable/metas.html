@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión Financiera - Metas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="styles_app.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="fas fa-wallet me-2"></i>Menu principal</a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="app.html">AFIP</a>
+                <a class="nav-link" href="gastos.html">Gastos</a>
+                <a class="nav-link" href="ingresos.html">Ingresos</a>
+                <a class="nav-link active" href="metas.html">Metas</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Header -->
+        <div class="d-flex align-items-center mb-4">
+            <a href="app.html" class="btn btn-outline-primary me-3">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+            <div>
+                <h2 class="text-primary mb-0">Definir Metas</h2>
+                <p class="text-muted">Establece y sigue tus objetivos financieros</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="section-card">
+                    <h4 class="text-primary mb-4"><i class="fas fa-bullseye me-2"></i>Nueva Meta Financiera</h4>
+                    <form id="metasForm">
+                        <div class="mb-3">
+                            <label class="form-label">Nombre de la Meta</label>
+                            <input type="text" class="form-control" placeholder="Ej: Vacaciones de verano" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Tipo de Meta</label>
+                            <select class="form-select" id="tipoMeta" required>
+                                <option value="">Selecciona el tipo</option>
+                                <option value="ahorro">💰 Ahorro General</option>
+                                <option value="vacaciones">✈️ Vacaciones</option>
+                                <option value="casa">🏠 Casa/Vivienda</option>
+                                <option value="vehiculo">🚗 Vehículo</option>
+                                <option value="educacion">📚 Educación</option>
+                                <option value="emergencia">🚨 Fondo de Emergencia</option>
+                            </select>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Monto Objetivo</label>
+                                    <input type="number" class="form-control" step="0.01" placeholder="0.00" required>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Monto Actual</label>
+                                    <input type="number" class="form-control" step="0.01" placeholder="0.00">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Fecha Límite</label>
+                            <input type="date" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Descripción (Opcional)</label>
+                            <textarea class="form-control" rows="3" placeholder="Describe tu meta..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">
+                            <i class="fas fa-save me-2"></i>Crear Meta
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="section-card">
+                    <h5 class="mb-3">Tipos de Metas</h5>
+                    <div class="row">
+                        <div class="col-6 col-md-4 mb-2">
+                            <div class="category-btn text-center" data-tipo="ahorro">
+                                <i class="fas fa-piggy-bank text-primary"></i><br><small>Ahorro</small>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4 mb-2">
+                            <div class="category-btn text-center" data-tipo="vacaciones">
+                                <i class="fas fa-plane text-info"></i><br><small>Vacaciones</small>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4 mb-2">
+                            <div class="category-btn text-center" data-tipo="casa">
+                                <i class="fas fa-home text-success"></i><br><small>Casa</small>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4 mb-2">
+                            <div class="category-btn text-center" data-tipo="vehiculo">
+                                <i class="fas fa-car text-secondary"></i><br><small>Vehículo</small>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4 mb-2">
+                            <div class="category-btn text-center" data-tipo="educacion">
+                                <i class="fas fa-graduation-cap text-warning"></i><br><small>Educación</small>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4 mb-2">
+                            <div class="category-btn text-center" data-tipo="emergencia">
+                                <i class="fas fa-shield-alt text-danger"></i><br><small>Emergencia</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-card">
+                    <h5 class="mb-3">Metas Activas</h5>
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <div><i class="fas fa-plane text-info me-2"></i>Vacaciones de Verano</div>
+                            <span class="badge bg-primary">65%</span>
+                        </div>
+                        <div class="progress mb-2">
+                            <div class="progress-bar" style="width: 65%"></div>
+                        </div>
+                        <div class="d-flex justify-content-between text-muted small">
+                            <span>$1,300</span>
+                            <span>$2,000</span>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <div><i class="fas fa-shield-alt text-danger me-2"></i>Fondo de Emergencia</div>
+                            <span class="badge bg-warning">40%</span>
+                        </div>
+                        <div class="progress mb-2">
+                            <div class="progress-bar bg-warning" style="width: 40%"></div>
+                        </div>
+                        <div class="d-flex justify-content-between text-muted small">
+                            <span>$2,000</span>
+                            <span>$5,000</span>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <div><i class="fas fa-laptop text-success me-2"></i>Nuevo Laptop</div>
+                            <span class="badge bg-success">67%</span>
+                        </div>
+                        <div class="progress mb-2">
+                            <div class="progress-bar bg-success" style="width: 67%"></div>
+                        </div>
+                        <div class="d-flex justify-content-between text-muted small">
+                            <span>$800</span>
+                            <span>$1,200</span>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <div><i class="fas fa-car text-secondary me-2"></i>Auto Nuevo</div>
+                            <span class="badge bg-info">25%</span>
+                        </div>
+                        <div class="progress mb-2">
+                            <div class="progress-bar bg-info" style="width: 25%"></div>
+                        </div>
+                        <div class="d-flex justify-content-between text-muted small">
+                            <span>$5,000</span>
+                            <span>$20,000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-card" style="background: linear-gradient(135deg, var(--light-blue), var(--primary-blue));">
+                    <h5 class="text-primary"><i class="fas fa-lightbulb me-2"></i>Consejos para Metas</h5>
+                    <ul class="text-primary mb-0 small">
+                        <li>Establece metas específicas y medibles</li>
+                        <li>Define fechas límite realistas</li>
+                        <li>Divide metas grandes en objetivos pequeños</li>
+                        <li>Revisa tu progreso regularmente</li>
+                        <li>Celebra los logros alcanzados</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Manejar envío de formulario
+        document.getElementById('metasForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Meta creada exitosamente!');
+            this.reset();
+        });
+
+        // Manejar selección de tipos de meta
+        document.querySelectorAll('.category-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const tipo = this.dataset.tipo;
+                document.getElementById('tipoMeta').value = tipo;
+                
+                document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Establecer fecha actual por defecto
+        document.querySelector('input[type="date"]').value = new Date().toISOString().split('T')[0];
+    </script>
+</body>
+</html>
